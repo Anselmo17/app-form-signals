@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f7fbff"/>
+      <stop offset="60%" stop-color="#eef6fb"/>
+      <stop offset="100%" stop-color="#f8fbfc"/>
+    </linearGradient>
+    <linearGradient id="form" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#fbfcfd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <!-- Centered form -->
+  <g transform="translate(300,120)">
+    <rect width="600" height="460" rx="12" fill="url(#form)" stroke="#d7dde3" />
+    <text x="40" y="60" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#222">Cadastro de Usuário</text>
+
+    <!-- Inputs -->
+    <rect x="40" y="100" width="520" height="44" rx="6" fill="#fbfcfd" stroke="#e1e6ea" />
+    <text x="52" y="130" font-family="Arial" font-size="14" fill="#7a8288">Nome completo</text>
+
+    <rect x="40" y="160" width="520" height="44" rx="6" fill="#fbfcfd" stroke="#e1e6ea" />
+    <text x="52" y="190" font-family="Arial" font-size="14" fill="#7a8288">Senha</text>
+
+    <rect x="40" y="220" width="520" height="44" rx="6" fill="#fbfcfd" stroke="#e1e6ea" />
+    <text x="52" y="250" font-family="Arial" font-size="14" fill="#7a8288">Banco (Itaú)</text>
+
+    <!-- Button -->
+    <rect x="40" y="300" width="520" height="48" rx="6" fill="#007bff" />
+    <text x="300" y="334" font-family="Arial" font-size="16" fill="#fff" text-anchor="middle">Cadastrar no Sistema</text>
+
+    <!-- Status preview -->
+    <rect x="40" y="370" width="220" height="34" rx="6" fill="#f8fafc" stroke="#e1e6ea" />
+    <text x="52" y="395" font-family="Arial" font-size="13" fill="#222">Status do Formulário: ❌ Inválido</text>
+  </g>
+</svg>

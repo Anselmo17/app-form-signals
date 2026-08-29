@@ -1,0 +1,140 @@
+.register-container {
+  max-width: 560px; /* mais larga */
+  width: 92%;
+  margin: 50px auto;
+  padding: 24px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 18px; /* Aumenta o tamanho da fonte do formulário */
+}
+
+/* Dark theme */
+.register-container.dark {
+  background: #121212;
+  color: #e6e6e6;
+  border: 1px solid #222;
+}
+
+/* Light theme */
+.register-container.light {
+  background: #f5f7fa; /* cor mais suave e amigável */
+  color: #222222;
+  border: 1px solid #d7dde3;
+  box-shadow: 0 6px 18px rgba(34,40,49,0.06);
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.register-container.dark .form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #1e1e1e;
+  color: #e6e6e6;
+}
+.register-container.light .form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #e1e6ea;
+  border-radius: 4px;
+  background: #fbfcfd; /* ligeiramente off-white */
+  color: #222222;
+}
+.register-container.dark .form-group select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #1e1e1e;
+  color: #e6e6e6;
+}
+.register-container.light .form-group select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #e1e6ea;
+  border-radius: 4px;
+  background: #fbfcfd;
+  color: #222222;
+}
+/* Buttons: adjust per theme */
+.register-container.dark button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0a66ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.05rem;
+}
+.register-container.dark button:hover { background-color: #084ed1; }
+
+.register-container.light button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.05rem;
+}
+.register-container.light button:hover { background-color: #0056b3; box-shadow: 0 6px 14px rgba(0,91,187,0.12); }
+.register-container.dark .preview {
+  margin-top: 20px;
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 4px;
+}
+.register-container.light .preview {
+  margin-top: 20px;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* Responsividade: em telas maiores permitir largura maior */
+@media (min-width: 900px) {
+  .register-container {
+    width: auto;
+    max-width: 720px;
+    padding: 28px;
+  }
+}
+
+/* Adicione isso ao final do seu arquivo CSS existente */
+.error-messages {
+  margin-top: 5px;
+}
+.register-container.dark .error-text {
+  display: block;
+  color: #ff7b7b;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.register-container.light .error-text {
+  display: block;
+  color: #dc3545;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.register-container.dark button:disabled {
+  background-color: #3a3a3a;
+  color: #888;
+  cursor: not-allowed;
+}
+.register-container.light button:disabled {
+  background-color: #cccccc;
+  color: #666;
+  cursor: not-allowed;
+}

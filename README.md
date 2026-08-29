@@ -1,6 +1,10 @@
 # AppFormSignals
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.6.
+Pequeno aplicativo Angular demonstrando formulários com Signals.
+
+![Screenshot do site](public/screenshot.svg)
+
+Este README inclui uma imagem demonstrativa do layout do formulário. Substitua `public/screenshot.svg` por uma captura real se desejar.
 
 ## Development server
 

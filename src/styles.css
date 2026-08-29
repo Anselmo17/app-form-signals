@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global background: soft full-screen gradient for friendliness */
+html, body {
+	height: 100%;
+	margin: 0;
+}
+body {
+	background: linear-gradient(180deg, #f7fbff 0%, #eef6fb 40%, #f8fbfc 100%);
+	/* fallback for darker preference */
+	color: #222;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure the app root stretches so the gradient fills the viewport */
+#app-root, app-root {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Slight overlay for dark mode when `register-container.dark` is used */
+.register-container.dark {
+	background: rgba(18,18,18,0.9);
+}
+
+/* Reduce contrast for light theme edges */
+.register-container.light {
+	background-clip: padding-box;
+}
