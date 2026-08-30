@@ -1,21 +1,43 @@
-<div class="home-page">
-  <div class="landing-card">
-    <div class="panel-header">Landing Page</div>
+<div class="login-page">
+  <div class="login-card">
+    <div class="login-header">Login</div>
 
-    <div class="hero-panel">
-      <div class="photo-wrap">
-        <img src="/profile.png" alt="Pessoa" />
+    <div class="login-body">
+      <div class="login-title-row">
+        <button class="back-button" type="button" aria-label="Voltar" [routerLink]="['/home']">
+          <span>←</span>
+        </button>
+
+        <div class="title-wrap">
+          <h1>Fazer Login</h1>
+          <p>Para entrar em nossa plataforma</p>
+        </div>
       </div>
 
-      <div class="hero-copy">
-        <p class="author-name">Pietro Pacheco</p>
-        <h1>Gerenciador de<br>Finanças Pessoais</h1>
-      </div>
-    </div>
+      <form class="login-form">
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="email" />
+        </label>
 
-    <div class="action-stack">
-      <button class="primary-btn" type="button">Fazer Login</button>
-      <button class="secondary-btn" type="button">Cadastrar-se</button>
+        <label class="field">
+          <span>Senha</span>
+          <div class="input-wrap">
+            <input type="password" name="password" />
+            <button type="button" class="eye-button" aria-label="Mostrar senha">
+              👁
+            </button>
+          </div>
+          <a href="#" class="forgot-link">Esqueci a senha</a>
+        </label>
+
+        <button class="submit-btn" type="submit">Fazer Login</button>
+      </form>
+
+      <p class="terms">
+        Ao entrar em nossa plataforma você concorda com nossos
+        <a href="#">Termos de Serviço</a> e de <a href="#">Privacidade</a>
+      </p>
     </div>
   </div>
 </div>

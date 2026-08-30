@@ -4,8 +4,8 @@ import { RouterLink } from '@angular/router';
 @Component({
   standalone: true,
   imports: [RouterLink],
-  selector: 'app-home',
-  styleUrl: './home.css',
-  templateUrl: './home.html',
+  selector: 'app-register',
+  styleUrl: './register.css',
+  templateUrl: './register.html',
 })
-export class Home {}
+export class Register {}

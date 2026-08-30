@@ -1,0 +1,65 @@
+<div class="register-page">
+  <div class="register-card">
+    <div class="register-header">Cadastro</div>
+
+    <div class="register-body">
+      <div class="register-title-row">
+        <button class="back-button" type="button" aria-label="Voltar" [routerLink]="['/home']">
+          <span>←</span>
+        </button>
+
+        <div class="title-wrap">
+          <h1>Cadastre-se</h1>
+          <p>Faça cadastro para entrar em nossa plataforma</p>
+        </div>
+      </div>
+
+      <form class="register-form">
+        <div class="name-row">
+          <label class="field half">
+            <span>Nome</span>
+            <input type="text" name="firstName" />
+          </label>
+
+          <label class="field half">
+            <span>Sobrenome</span>
+            <input type="text" name="lastName" />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="email" />
+        </label>
+
+        <label class="field">
+          <span>Senha</span>
+          <div class="input-wrap">
+            <input type="password" name="password" />
+            <button type="button" class="eye-button" aria-label="Mostrar senha">
+              👁
+            </button>
+          </div>
+        </label>
+
+        <label class="field">
+          <span>Confirmar Senha</span>
+          <div class="input-wrap">
+            <input type="password" name="confirmPassword" />
+            <button type="button" class="eye-button" aria-label="Mostrar senha">
+              👁
+            </button>
+          </div>
+        </label>
+
+        <button class="submit-btn" type="submit">Cadastrar-se</button>
+      </form>
+
+      <p class="terms">
+        Ao entrar em nossa plataforma você concorda com nossos
+        <a href="#">Termos de Serviço</a> e de <a href="#">Privacidade</a>
+      </p>
+    </div>
+  </div>
+</div>
+
