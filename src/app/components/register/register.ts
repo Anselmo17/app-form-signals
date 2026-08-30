@@ -1,11 +1,23 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [RouterLink],
+  imports: [CommonModule, RouterLink],
   selector: 'app-register',
   styleUrl: './register.css',
   templateUrl: './register.html',
 })
-export class Register {}
+export class Register {
+  public isConfirmStep = false;
+  public emailForConfirmation = 'teste@gmail.com';
+
+  public onRegisterSubmit(): void {
+    this.isConfirmStep = true;
+  }
+
+  public onBack(): void {
+    this.isConfirmStep = false;
+  }
+}

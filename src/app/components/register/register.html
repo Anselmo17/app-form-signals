@@ -1,64 +1,96 @@
 <div class="register-page">
   <div class="register-card">
-    <div class="register-header">Cadastro</div>
+    <div class="register-header">{{ isConfirmStep ? 'Cadastro - Confirmar Email' : 'Cadastro' }}</div>
 
     <div class="register-body">
-      <div class="register-title-row">
-        <button class="back-button" type="button" aria-label="Voltar" [routerLink]="['/home']">
-          <span>←</span>
-        </button>
+      <ng-container *ngIf="!isConfirmStep; else confirmEmailStep">
+        <div class="register-title-row">
+          <button class="back-button" type="button" aria-label="Voltar" [routerLink]="['/home']">
+            <span>←</span>
+          </button>
 
-        <div class="title-wrap">
-          <h1>Cadastre-se</h1>
-          <p>Faça cadastro para entrar em nossa plataforma</p>
-        </div>
-      </div>
-
-      <form class="register-form">
-        <div class="name-row">
-          <label class="field half">
-            <span>Nome</span>
-            <input type="text" name="firstName" />
-          </label>
-
-          <label class="field half">
-            <span>Sobrenome</span>
-            <input type="text" name="lastName" />
-          </label>
+          <div class="title-wrap">
+            <h1>Cadastre-se</h1>
+            <p>Faça cadastro para entrar em nossa plataforma</p>
+          </div>
         </div>
 
-        <label class="field">
-          <span>Email</span>
-          <input type="email" name="email" />
-        </label>
+        <form class="register-form" (ngSubmit)="onRegisterSubmit()">
+          <div class="name-row">
+            <label class="field half">
+              <span>Nome</span>
+              <input type="text" name="firstName" />
+            </label>
 
-        <label class="field">
-          <span>Senha</span>
-          <div class="input-wrap">
-            <input type="password" name="password" />
-            <button type="button" class="eye-button" aria-label="Mostrar senha">
-              👁
-            </button>
+            <label class="field half">
+              <span>Sobrenome</span>
+              <input type="text" name="lastName" />
+            </label>
           </div>
-        </label>
 
-        <label class="field">
-          <span>Confirmar Senha</span>
-          <div class="input-wrap">
-            <input type="password" name="confirmPassword" />
-            <button type="button" class="eye-button" aria-label="Mostrar senha">
-              👁
-            </button>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" />
+          </label>
+
+          <label class="field">
+            <span>Senha</span>
+            <div class="input-wrap">
+              <input type="password" name="password" />
+              <button type="button" class="eye-button" aria-label="Mostrar senha">👁</button>
+            </div>
+          </label>
+
+          <label class="field">
+            <span>Confirmar Senha</span>
+            <div class="input-wrap">
+              <input type="password" name="confirmPassword" />
+              <button type="button" class="eye-button" aria-label="Mostrar senha">👁</button>
+            </div>
+          </label>
+
+          <button class="submit-btn" type="submit" (click)="$event.preventDefault(); onRegisterSubmit()">Cadastrar-se</button>
+        </form>
+
+        <p class="terms">
+          Ao entrar em nossa plataforma você concorda com nossos
+          <a href="#">Termos de Serviço</a> e de <a href="#">Privacidade</a>
+        </p>
+      </ng-container>
+
+      <ng-template #confirmEmailStep>
+        <div class="confirm-title-row">
+          <button class="back-button" type="button" aria-label="Voltar" (click)="onBack()">
+            <span>←</span>
+          </button>
+
+          <div class="confirm-title-wrap">
+            <h1>Confirmar Email</h1>
+            <p>confirme seu email para entrar na plataforma</p>
           </div>
-        </label>
+        </div>
 
-        <button class="submit-btn" type="submit">Cadastrar-se</button>
-      </form>
+        <div class="confirm-message">
+          Enviamos um código para o email: <strong>{{ emailForConfirmation }}</strong>,
+          insira-o abaixo para confirmar seu email. Utilize o botão ao lado para reenviar o código.
+        </div>
 
-      <p class="terms">
-        Ao entrar em nossa plataforma você concorda com nossos
-        <a href="#">Termos de Serviço</a> e de <a href="#">Privacidade</a>
-      </p>
+        <div class="confirm-code-row">
+          <div class="code-input-wrap">
+            <input type="text" placeholder="Código" />
+            <span class="code-dot"></span>
+          </div>
+
+          <button type="button" class="resend-button" aria-label="Reenviar código">↻</button>
+        </div>
+
+        <button class="submit-btn" type="button">Confirmar Email</button>
+
+        <p class="terms">
+          Ao entrar em nossa plataforma você concorda com nossos
+          <a href="#">Termos de Serviço</a> e de <a href="#">Privacidade</a>
+        </p>
+      </ng-template>
     </div>
   </div>
 </div>
