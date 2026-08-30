@@ -1,0 +1,125 @@
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 26px;
+  box-sizing: border-box;
+}
+
+.landing-card {
+  width: min(100%, 1024px);
+  background: rgba(20, 22, 27, 0.96);
+  border: none;
+  border-radius: 18px;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.panel-header {
+  padding: 18px 22px 10px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  background: linear-gradient(180deg, rgba(255, 213, 0, 0.1), rgba(0, 0, 0, 0.16));
+}
+
+.photo-wrap {
+  position: relative;
+  height: 560px;
+  overflow: hidden;
+  background: linear-gradient(130deg, rgba(255, 213, 0, 0.3), rgba(0, 0, 0, 0.1));
+}
+
+.photo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 210, 0, 0.46), rgba(0,0,0,0.18));
+  z-index: 1;
+}
+
+.photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: saturate(0.8) contrast(1.1) brightness(0.8);
+}
+
+.hero-copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 22px 18px 20px 18px;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.62));
+}
+
+.author-name {
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.5rem, 2.1vw, 2.2rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  font-weight: 900;
+  max-width: 95%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+.action-stack {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: rgba(20, 22, 27, 0.94);
+}
+
+.primary-btn,
+.secondary-btn {
+  width: 100%;
+  padding: 20px 22px;
+  border-radius: 12px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-1px);
+}
+
+.primary-btn {
+  border: none;
+  background: #ffd500;
+  color: #101010;
+  box-shadow: 0 8px 18px rgba(255, 213, 0, 0.2);
+}
+
+.secondary-btn {
+  border: 2px solid rgba(255, 213, 0, 0.8);
+  background: rgba(20, 22, 27, 0.2);
+  color: #f5f5f5;
+}
+
+

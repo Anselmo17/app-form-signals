@@ -1,30 +1,34 @@
-/* Global background: soft full-screen gradient for friendliness */
 html, body {
-	height: 100%;
-	margin: 0;
+  height: 100%;
+  margin: 0;
 }
+
 body {
-	background: linear-gradient(180deg, #f7fbff 0%, #eef6fb 40%, #f8fbfc 100%);
-	/* fallback for darker preference */
-	color: #222;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  background:
+    linear-gradient(90deg, rgba(24, 24, 24, 0.78), rgba(18, 18, 18, 0.68)),
+    url('/profile.png') center center / cover no-repeat fixed;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure the app root stretches so the gradient fills the viewport */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px);
+  background-size: 9px 9px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
 #app-root, app-root {
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
-/* Slight overlay for dark mode when `register-container.dark` is used */
-.register-container.dark {
-	background: rgba(18,18,18,0.9);
-}
-
-/* Reduce contrast for light theme edges */
-.register-container.light {
-	background-clip: padding-box;
-}
