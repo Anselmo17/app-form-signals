@@ -1,1 +1,34 @@
-<p>dashboard works!</p>
+<div class="dashboard-shell">
+	<aside class="sidebar" aria-label="Navegacao principal">
+		<a class="brand" routerLink="/dashboard" aria-label="Financas pessoais"><span class="brand-mark">$</span><span>Financas<span class="brand-accent">.</span></span></a>
+		<nav class="main-nav">
+			<a class="nav-item active" routerLink="/dashboard"><span class="nav-icon">⌂</span> Visao geral</a>
+			<a class="nav-item" routerLink="/report"><span class="nav-icon">▥</span> Relatorios</a>
+			<a class="nav-item" routerLink="/dashboard"><span class="nav-icon">◷</span> Lancamentos</a>
+		</nav>
+		<div class="sidebar-footer"><a class="nav-item" routerLink="/dashboard"><span class="nav-icon">⚙</span> Configuracoes</a><a class="nav-item" routerLink="/home"><span class="nav-icon">↪</span> Sair</a></div>
+	</aside>
+
+	<main class="dashboard-main">
+		<header class="topbar">
+			<div><p class="eyebrow">{{ currentDate }}</p><h1>Bom dia, Fulano <span aria-hidden="true">&#10024;</span></h1></div>
+			<div class="profile-area"><button class="icon-button" type="button" aria-label="Notificacoes">&#9673;</button><div class="profile-avatar" aria-hidden="true">M</div><div class="profile-copy"><strong>Fulano Santos</strong><span>Conta pessoal</span></div></div>
+		</header>
+
+		<section class="dashboard-content">
+			<div class="section-heading"><div><p class="eyebrow">Acompanhamento mensal</p><h2>Visao geral</h2></div><button class="period-select" type="button">Maio 2025 <span>⌄</span></button></div>
+			<section class="summary-grid" aria-label="Resumo financeiro">
+				<article class="balance-card"><div class="card-topline"><span>Saldo disponivel</span><span class="card-menu">•••</span></div><strong class="balance-value">R$ 5.207<span>,38</span></strong><div class="balance-meta"><span class="trend-up">↗ 12,8%</span><span>vs. mes anterior</span></div><div class="balance-chart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+				<article class="metric-card"><div class="metric-icon income-icon">↗</div><div><span>Entradas</span><strong>R$ 7.700,00</strong><small class="trend-up">+ 8,4% este mes</small></div></article>
+				<article class="metric-card"><div class="metric-icon expense-icon">↘</div><div><span>Saidas</span><strong>R$ 2.492,62</strong><small class="trend-down">- 3,2% este mes</small></div></article>
+			</section>
+
+			<div class="content-grid">
+				<section class="transactions-panel"><div class="panel-heading"><div><p class="eyebrow">Movimentacoes recentes</p><h2>Ultimos lancamentos</h2></div><button class="text-button" type="button">Ver todos <span>→</span></button></div><div class="transaction-list">
+					@for (transaction of transactions; track transaction.title) { <article class="transaction-row"><div class="transaction-icon" [class.expense-bg]="transaction.type === 'expense'">{{ transaction.type === 'income' ? '↗' : '↘' }}</div><div class="transaction-copy"><strong>{{ transaction.title }}</strong><span>{{ transaction.category }} · Hoje</span></div><strong class="transaction-amount" [class.expense-text]="transaction.type === 'expense'">{{ transaction.amount }}</strong><button class="row-menu" type="button" aria-label="Mais opcoes">•••</button></article> }
+				</div></section>
+				<aside class="quick-actions"><div class="panel-heading"><div><p class="eyebrow">Atalhos</p><h2>Acoes rapidas</h2></div></div><button class="action-button income-action" type="button"><span>+</span><div><strong>Adicionar receita</strong><small>Registre uma entrada</small></div><b>→</b></button><button class="action-button expense-action" type="button"><span>-</span><div><strong>Adicionar despesa</strong><small>Registre uma saida</small></div><b>→</b></button><a class="report-link" routerLink="/report"><span>▥</span><div><strong>Analise seu dinheiro</strong><small>Veja seu relatorio mensal</small></div><b>→</b></a></aside>
+			</div>
+		</section>
+	</main>
+</div>

@@ -120,6 +120,16 @@
   box-shadow: 0 0 0 2px rgba(255, 213, 74, 0.15);
 }
 
+.field input.input-error {
+  border-color: #f07171;
+  box-shadow: 0 0 0 2px rgba(240, 113, 113, 0.14);
+}
+
+.field-error {
+  color: #f58a8a;
+  font-size: 0.78rem;
+}
+
 .input-wrap {
   position: relative;
 }

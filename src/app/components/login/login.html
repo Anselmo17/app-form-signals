@@ -14,20 +14,22 @@
         </div>
       </div>
 
-      <form class="login-form">
+      <form class="login-form" novalidate (submit)="login($event)">
         <label class="field">
           <span>Email</span>
-          <input type="email" name="email" />
+          <input type="email" name="email" autocomplete="username" required [value]="email()" (input)="updateEmail($event)" [class.input-error]="emailError()" />
+          @if (emailError()) { <small class="field-error" role="alert">{{ emailError() }}</small> }
         </label>
 
         <label class="field">
           <span>Senha</span>
           <div class="input-wrap">
-            <input type="password" name="password" />
+            <input type="password" name="password" autocomplete="current-password" required [value]="password()" (input)="updatePassword($event)" [class.input-error]="passwordError()" />
             <button type="button" class="eye-button" aria-label="Mostrar senha">
               👁
             </button>
           </div>
+          @if (passwordError()) { <small class="field-error" role="alert">{{ passwordError() }}</small> }
           <a href="#" class="forgot-link">Esqueci a senha</a>
         </label>
 
