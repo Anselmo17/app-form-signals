@@ -366,7 +366,8 @@ h2 {
   font-size: 1rem;
 }
 .transaction-list {
-  display: grid;
+  max-height:402px;
+  overflow: auto;
 }
 .transaction-row {
   display: flex;

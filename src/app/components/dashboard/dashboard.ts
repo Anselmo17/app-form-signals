@@ -1,9 +1,10 @@
+import { DatePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Transaction, TransactionService } from '../../services/transaction.service';
 
 @Component({
-  imports: [RouterLink],
+  imports: [DatePipe, RouterLink],
   selector: 'app-dashboard',
   styleUrl: './dashboard.scss',
   templateUrl: './dashboard.html',
