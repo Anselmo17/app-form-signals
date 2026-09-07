@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink],
   selector: 'app-register',
-  styleUrl: './register.css',
+  styleUrl: './register.scss',
   templateUrl: './register.html',
 })
 export class Register {
