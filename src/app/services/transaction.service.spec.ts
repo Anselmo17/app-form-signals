@@ -22,6 +22,7 @@ describe('TransactionService', () => {
       category: 'Receita',
       amount: 'R$ 6.500,00',
       type: 'income',
+      date: '2025-05-20',
     });
   });
 

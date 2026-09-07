@@ -63,6 +63,7 @@ export class TransactionForm {
       category: this.category(),
       amount: this.isIncome() ? formattedAmount : `- ${formattedAmount}`,
       type: this.type(),
+      date: this.date(),
     });
     void this.router.navigate(['/dashboard']);
   }
