@@ -21,4 +21,8 @@ export class TransactionService {
   getTransactions(): Transaction[] {
     return this.transactions;
   }
+
+  addTransaction(transaction: Transaction): void {
+    this.transactions.unshift(transaction);
+  }
 }

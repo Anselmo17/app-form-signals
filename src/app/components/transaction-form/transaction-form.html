@@ -1,0 +1,19 @@
+<main class="transaction-page">
+  <section class="transaction-card">
+    <header class="form-header">
+      <a class="back-button" routerLink="/dashboard" aria-label="Voltar para o dashboard">←</a>
+      <div><p class="eyebrow">Novo lancamento</p><h1>{{ title() }}</h1><p class="subtitle">{{ subtitle() }}</p></div>
+    </header>
+
+    <form class="transaction-form" novalidate (submit)="save($event)">
+      <label class="field"><span>Descricao</span><input type="text" placeholder="Ex.: Salario, aluguel..." [value]="description()" (input)="update(description, $event)" [class.input-error]="descriptionError()" />@if (descriptionError()) { <small>{{ descriptionError() }}</small> }</label>
+      <label class="field"><span>Valor</span><div class="amount-input"><b>R$</b><input type="text" inputmode="numeric" placeholder="0,00" [value]="amount()" (input)="updateAmount($event)" [class.input-error]="amountError()" /></div>@if (amountError()) { <small>{{ amountError() }}</small> }</label>
+      <label class="field"><span>Moeda</span><select><option>BRL - Real brasileiro</option></select></label>
+
+      <fieldset class="category-field"><legend>Categoria</legend><div class="category-grid">@for (item of categories; track item) { <button type="button" class="category-option" [class.selected]="category() === item" (click)="selectCategory(item)"><span>▣</span><small>{{ item }}</small></button> }</div>@if (categoryError()) { <small class="category-error">{{ categoryError() }}</small> }</fieldset>
+
+      <div class="form-row"><label class="field"><span>Repetir</span><select><option>Nao repetir</option><option>Semanalmente</option><option>Mensalmente</option></select></label><label class="field"><span>Data</span><input type="date" [value]="date()" (input)="update(date, $event)" /></label></div>
+      <footer class="form-actions"><button class="reset-button" type="button" (click)="reset()">Restaurar</button><button class="save-button" type="submit">Salvar</button></footer>
+    </form>
+  </section>
+</main>

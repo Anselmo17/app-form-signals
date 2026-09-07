@@ -4,7 +4,6 @@
 		<nav class="main-nav">
 			<a class="nav-item active" routerLink="/dashboard"><span class="nav-icon">⌂</span> Visao geral</a>
 			<a class="nav-item" routerLink="/report"><span class="nav-icon">▥</span> Relatorios</a>
-			<a class="nav-item" routerLink="/dashboard"><span class="nav-icon">◷</span> Lancamentos</a>
 		</nav>
 		<div class="sidebar-footer"><a class="nav-item" routerLink="/dashboard"><span class="nav-icon">⚙</span> Configuracoes</a><a class="nav-item" routerLink="/home"><span class="nav-icon">↪</span> Sair</a></div>
 	</aside>
@@ -24,10 +23,10 @@
 			</section>
 
 			<div class="content-grid">
-				<section class="transactions-panel"><div class="panel-heading"><div><p class="eyebrow">Movimentacoes recentes</p><h2>Ultimos lancamentos</h2></div><button class="text-button" type="button">Ver todos <span>→</span></button></div><div class="transaction-list">
+				<section class="transactions-panel"><div class="panel-heading"><div><p class="eyebrow">Movimentacoes recentes</p><h2>Ultimos lancamentos</h2></div><a class="text-button" routerLink="/report">Ver todos <span>→</span></a></div><div class="transaction-list">
 					@for (transaction of transactions; track transaction.title) { <article class="transaction-row"><div class="transaction-icon" [class.expense-bg]="transaction.type === 'expense'">{{ transaction.type === 'income' ? '↗' : '↘' }}</div><div class="transaction-copy"><strong>{{ transaction.title }}</strong><span>{{ transaction.category }} · Hoje</span></div><strong class="transaction-amount" [class.expense-text]="transaction.type === 'expense'">{{ transaction.amount }}</strong><button class="row-menu" type="button" aria-label="Mais opcoes">•••</button></article> }
 				</div></section>
-				<aside class="quick-actions"><div class="panel-heading"><div><p class="eyebrow">Atalhos</p><h2>Acoes rapidas</h2></div></div><button class="action-button income-action" type="button"><span>+</span><div><strong>Adicionar receita</strong><small>Registre uma entrada</small></div><b>→</b></button><button class="action-button expense-action" type="button"><span>-</span><div><strong>Adicionar despesa</strong><small>Registre uma saida</small></div><b>→</b></button><a class="report-link" routerLink="/report"><span>▥</span><div><strong>Analise seu dinheiro</strong><small>Veja seu relatorio mensal</small></div><b>→</b></a></aside>
+				<aside class="quick-actions"><div class="panel-heading"><div><p class="eyebrow">Atalhos</p><h2>Acoes rapidas</h2></div></div><a class="action-button income-action" routerLink="/transaction/income"><span>+</span><div><strong>Adicionar receita</strong><small>Registre uma entrada</small></div><b>→</b></a><a class="action-button expense-action" routerLink="/transaction/expense"><span>-</span><div><strong>Adicionar despesa</strong><small>Registre uma saida</small></div><b>→</b></a><a class="report-link" routerLink="/report"><span>▥</span><div><strong>Analise seu dinheiro</strong><small>Veja seu relatorio mensal</small></div><b>→</b></a></aside>
 			</div>
 		</section>
 	</main>

@@ -1,1 +1,19 @@
-<p>report works!</p>
+<div class="report-layout">
+	<aside class="sidebar" aria-label="Navegacao principal">
+		<a class="brand" routerLink="/dashboard"><span class="brand-mark">$</span><span>Financas<span class="brand-accent">.</span></span></a>
+		<nav class="main-nav"><a class="nav-item" routerLink="/dashboard"><span>⌂</span> Visao geral</a><a class="nav-item active" routerLink="/report"><span>▥</span> Relatorios</a></nav>
+		<div class="sidebar-footer"><a class="nav-item" routerLink="/dashboard"><span>⚙</span> Configuracoes</a><a class="nav-item" routerLink="/home"><span>↪</span> Sair</a></div>
+	</aside>
+
+	<main class="report-main">
+		<header class="topbar"><div><p class="eyebrow">Acompanhamento financeiro</p><h1>Relatorios</h1></div><div class="profile-area"><div class="profile-avatar">M</div><div class="profile-copy"><strong>Fulano Santos</strong><span>Conta pessoal</span></div></div></header>
+		<section class="report-content">
+			<div class="report-heading"><div><p class="eyebrow">Visao detalhada</p><h2>Seu dinheiro em foco</h2></div><button class="period-select" type="button">Maio 2025 <span>⌄</span></button></div>
+			<section class="report-summary"><article class="chart-card"><div class="card-heading"><div><span>Fluxo financeiro</span><strong>R$ 5.207,38</strong></div><span class="trend-up">↗ 12,8%</span></div><div class="chart" aria-label="Grafico de fluxo financeiro">@for (bar of [35, 52, 43, 68, 55, 79, 61, 88, 72, 94, 80, 100]; track $index) { <i [style.height.%]="bar"></i> }</div><div class="chart-labels"><span>Jan</span><span>Fev</span><span>Mar</span><span>Abr</span><span>Mai</span><span>Jun</span></div></article><article class="report-metric"><span>Entradas no periodo</span><strong>R$ 7.700,00</strong><small class="trend-up">+ 8,4% comparado ao mes anterior</small></article><article class="report-metric"><span>Saidas no periodo</span><strong>R$ 2.492,62</strong><small class="trend-down">- 3,2% comparado ao mes anterior</small></article></section>
+
+			<section class="transactions-card"><div class="list-heading"><div><p class="eyebrow">Movimentacoes</p><h2>Todos os lancamentos</h2></div><div class="filters"><button type="button">Exibir: <strong>Todos</strong>⌄</button><button type="button">Ordenar: <strong>Mais recentes</strong>⌄</button></div></div><div class="report-list">
+				@for (transaction of transactions; track $index) { <article class="report-row"><div class="transaction-icon" [class.expense-bg]="transaction.type === 'expense'">{{ transaction.type === 'income' ? '↗' : '↘' }}</div><div class="transaction-copy"><strong>{{ transaction.title }}</strong><span>{{ transaction.category }} · Hoje</span></div><strong class="transaction-amount" [class.expense-text]="transaction.type === 'expense'">{{ transaction.amount }}</strong><button class="row-menu" type="button" aria-label="Mais opcoes">•••</button></article> } @empty { <p class="empty-state">Nenhum lancamento encontrado.</p> }
+			</div></section>
+		</section>
+	</main>
+</div>

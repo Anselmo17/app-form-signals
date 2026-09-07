@@ -22,5 +22,9 @@ export const routes: Routes = [
     path: 'report',
     loadComponent: () => import('./components/report/report').then((m) => m.Report),
   },
+  {
+    path: 'transaction/:type',
+    loadComponent: () => import('./components/transaction-form/transaction-form').then((m) => m.TransactionForm),
+  },
   { path: '**', redirectTo: 'home' },
 ];
